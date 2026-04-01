@@ -1,0 +1,47 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(135deg, #2a003f, #4b0082);
+    color: white;
+}
+
+h1, h2 {
+    margin-top: 50px;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+input {
+    display: block;
+    margin: 15px auto;
+    padding: 12px;
+    width: 250px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.red {
+    background: #ff0033;
+    color: white;
+}
+
+.white {
+    background: white;
+    color: black;
+}
+
+.purple {
+    background: #a020f0;
+    color: white;
+}
