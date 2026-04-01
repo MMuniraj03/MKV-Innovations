@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Customer Details *</h2>
+
+<form id="customerForm">
+    <input type="text" placeholder="Customer Name *" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number *" required>
+    <input type="text" id="booking" placeholder="Booking Number *" required>
+    <input type="email" placeholder="Email ID *" required>
+
+    <button type="submit" class="btn red">Submit</button>
+</form>
+
+<script>
+function generateCode() {
+    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let numbers = "0123456789";
+    let code = "";
+
+    for (let i = 0; i < 4; i++) {
+        code += letters[Math.floor(Math.random() * letters.length)];
+    }
+    for (let i = 0; i < 4; i++) {
+        code += numbers[Math.floor(Math.random() * numbers.length)];
+    }
+    return code;
+}
+
+document.getElementById("customerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let mobile = document.getElementById("mobile").value;
+    let booking = document.getElementById("booking").value;
+    let code = generateCode();
+
+    // Store locally (demo)
+    localStorage.setItem(booking, code);
+
+    // 🔥 WhatsApp API Placeholder
+    console.log("Send WhatsApp:", mobile, code);
+
+    alert("Code sent successfully");
+
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>
