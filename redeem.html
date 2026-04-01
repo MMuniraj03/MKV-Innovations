@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redeem Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Redeem Code *</h2>
+
+<form id="redeemForm">
+    <input type="text" id="code" placeholder="Enter Code *" required>
+    <input type="text" id="booking" placeholder="Booking Number *" required>
+
+    <button type="submit" class="btn purple">Submit</button>
+</form>
+
+<script>
+document.getElementById("redeemForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let code = document.getElementById("code").value;
+    let booking = document.getElementById("booking").value;
+
+    let storedCode = localStorage.getItem(booking);
+
+    if (storedCode === code) {
+        alert("Code redeemed");
+    } else {
+        alert("Invalid code");
+    }
+
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>
